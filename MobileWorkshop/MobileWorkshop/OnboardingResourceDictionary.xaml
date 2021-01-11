@@ -1,0 +1,16 @@
+<ResourceDictionary
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <!--  Colors  -->
+    <Color x:Key="OnboardingBlue">#0091d9</Color>
+    <Color x:Key="OnboardingGreen">#48ce65</Color>
+    <Color x:Key="OnboardingLightPurple">#b34fa0</Color>
+    <Color x:Key="OnboardingRed">#e64b40</Color>
+    <Color x:Key="OnboardingOrange">#eeaa00</Color>
+    <Color x:Key="OnboardingDeepBlue">#0061a9</Color>
+    <Color x:Key="OnboardingPurple">#8922c9</Color>
+    <Color x:Key="OnboardingLightGray">#eeeeee</Color>
+    <Color x:Key="OnboardingGray">#888888</Color>
+    <Color x:Key="OnboardingBatmansVeryDarkGray">#222222</Color>
+
+</ResourceDictionary>

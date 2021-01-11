@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+        <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+        <ProjectGuid>{C05BC4DC-B8CF-439F-B7A3-DB8CB79FBEA9}</ProjectGuid>
+        <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+        <OutputType>Library</OutputType>
+        <RootNamespace>MobileWorkshop.Android</RootNamespace>
+        <AssemblyName>MobileWorkshop.Android</AssemblyName>
+        <AndroidApplication>True</AndroidApplication>
+        <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
+        <AndroidResgenClass>Resource</AndroidResgenClass>
+        <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
+        <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
+        <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
+        <AndroidUseLatestPlatformSdk>false</AndroidUseLatestPlatformSdk>
+        <TargetFrameworkVersion>v11.0</TargetFrameworkVersion>
+        <AndroidHttpClientHandlerType>Xamarin.Android.Net.AndroidClientHandler</AndroidHttpClientHandlerType>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+        <DebugSymbols>true</DebugSymbols>
+        <DebugType>portable</DebugType>
+        <Optimize>false</Optimize>
+        <OutputPath>bin\Debug</OutputPath>
+        <DefineConstants>DEBUG;</DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+        <AndroidLinkMode>None</AndroidLinkMode>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+        <DebugSymbols>true</DebugSymbols>
+        <DebugType>pdbonly</DebugType>
+        <Optimize>true</Optimize>
+        <OutputPath>bin\Release</OutputPath>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+        <AndroidManagedSymbols>true</AndroidManagedSymbols>
+        <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
+    </PropertyGroup>
+    <ItemGroup>
+        <Reference Include="Mono.Android" />
+        <Reference Include="System" />
+        <Reference Include="System.Core" />
+        <Reference Include="System.Xml.Linq" />
+        <Reference Include="System.Xml" />
+    </ItemGroup>
+    <ItemGroup>
+        <PackageReference Include="Xamarin.AndroidX.MediaRouter" Version="1.2.0.1" />
+        <PackageReference Include="Xamarin.AndroidX.Palette" Version="1.0.0.6" />
+        <PackageReference Include="Xamarin.Essentials" Version="1.6.0" />
+        <PackageReference Include="Xamarin.Forms" Version="5.0.0.1874" />
+        <PackageReference Include="Xamarin.Android.Support.Design" Version="28.0.0.3" />
+        <PackageReference Include="Xamarin.Android.Support.v7.AppCompat" Version="28.0.0.3" />
+        <PackageReference Include="Xamarin.Android.Support.v4" Version="28.0.0.3" />
+        <PackageReference Include="Xamarin.Android.Support.v7.CardView" Version="28.0.0.3" />
+        <PackageReference Include="Xamarin.Android.Support.v7.MediaRouter" Version="28.0.0.3" />
+    </ItemGroup>
+    <ItemGroup>
+        <Compile Include="MainActivity.cs" />
+        <Compile Include="Resources\Resource.Designer.cs" />
+        <Compile Include="Properties\AssemblyInfo.cs" />
+    </ItemGroup>
+    <ItemGroup>
+        <None Include="Resources\AboutResources.txt" />
+        <None Include="Assets\AboutAssets.txt" />
+        <None Include="Properties\AndroidManifest.xml" />
+    </ItemGroup>
+    <ItemGroup>
+        <AndroidResource Include="Resources\drawable\icon_auto.png" />
+        <AndroidResource Include="Resources\drawable\icon_bank_white_circle.png" />
+        <AndroidResource Include="Resources\drawable\icon_calendar_filled.png" />
+        <AndroidResource Include="Resources\drawable\icon_debt.png" />
+        <AndroidResource Include="Resources\drawable\icon_debt_gray.png" />
+        <AndroidResource Include="Resources\drawable\icon_drag_drop.png" />
+        <AndroidResource Include="Resources\drawable\icon_food.png" />
+        <AndroidResource Include="Resources\drawable\icon_giving.png" />
+        <AndroidResource Include="Resources\drawable\icon_giving_gray.png" />
+        <AndroidResource Include="Resources\drawable\icon_graduation_cap.png" />
+        <AndroidResource Include="Resources\drawable\icon_green_check.png" />
+        <AndroidResource Include="Resources\drawable\icon_home.png" />
+        <AndroidResource Include="Resources\drawable\icon_home_rent.png" />
+        <AndroidResource Include="Resources\drawable\icon_housing.png" />
+        <AndroidResource Include="Resources\drawable\icon_housing_gray.png" />
+        <AndroidResource Include="Resources\drawable\icon_income.png" />
+        <AndroidResource Include="Resources\drawable\icon_income_gray.png" />
+        <AndroidResource Include="Resources\drawable\icon_link_broken.png" />
+        <AndroidResource Include="Resources\drawable\icon_local_advisors.png" />
+        <AndroidResource Include="Resources\drawable\icon_local_advisors_selected.png" />
+        <AndroidResource Include="Resources\drawable\icon_map_compass.png" />
+        <AndroidResource Include="Resources\drawable\icon_money_coins.png" />
+        <AndroidResource Include="Resources\drawable\icon_pacifier.png" />
+        <AndroidResource Include="Resources\drawable\icon_paw.png" />
+        <AndroidResource Include="Resources\drawable\icon_personal.png" />
+        <AndroidResource Include="Resources\drawable\icon_play_movie.png" />
+        <AndroidResource Include="Resources\drawable\icon_ring.png" />
+        <AndroidResource Include="Resources\drawable\icon_send.png" />
+        <AndroidResource Include="Resources\drawable\icon_sport_car.png" />
+        <AndroidResource Include="Resources\drawable\icon_time_loop.png" />
+        <AndroidResource Include="Resources\drawable\icon_video_filled.png" />
+        <AndroidResource Include="Resources\drawable\icon_video_filled_active.png" />
+        <AndroidResource Include="Resources\drawable\intro_color_only.png" />
+        <AndroidResource Include="Resources\drawable\intro_gray_only.png" />
+        <AndroidResource Include="Resources\drawable\widget_everydollar_logo.png" />
+        <AndroidResource Include="Resources\layout\Tabbar.axml" />
+        <AndroidResource Include="Resources\layout\Toolbar.axml" />
+        <AndroidResource Include="Resources\values\styles.xml" />
+        <AndroidResource Include="Resources\values\colors.xml" />
+    </ItemGroup>
+    <ItemGroup>
+        <ProjectReference Include="..\MobileWorkshop\MobileWorkshop.csproj">
+            <Project>{6dbe8a4f-ff1e-4c20-958e-0938758d9c3d}</Project>
+            <Name>MobileWorkshop</Name>
+        </ProjectReference>
+    </ItemGroup>
+    <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
+</Project>

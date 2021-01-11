@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MobileWorkshop.Onboarding.IntroPage" 
+             NavigationPage.HasNavigationBar="false">
+    <ContentPage.Content>
+        <Grid RowDefinitions="1*, Auto">
+            <Frame HasShadow="False" BorderColor="Transparent" Margin="0">
+                <Label Text="X" FontSize="Large" />
+            </Frame>
+            <ScrollView Grid.Row="0">
+                <StackLayout VerticalOptions="Center">
+                    <Image
+                        HeightRequest="60"
+                        Source="widget_everydollar_logo"
+                        WidthRequest="60" />
+                    <Label FontSize="24" Text="Hey, Richard!" HorizontalTextAlignment="Center" />
+                    <Label FontSize="24" Text="Welcome to EveryDollar!" HorizontalTextAlignment="Center" />
+                    <Label FontSize="24" HorizontalTextAlignment="Center">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="Let's start by looking at your&#10;" />
+                                <Span Text="money goals. Then we'll help&#10;" />
+                                <Span Text="you build a custom budget so&#10;" />
+                                <Span Text="you can crush them all!!" />
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                </StackLayout>
+            </ScrollView>
+            <StackLayout Grid.Row="1">
+                <Button
+                    Margin="20"
+                    Text="Continue"
+                    VerticalOptions="EndAndExpand"
+                    Clicked="OnContinueClicked"
+                    BackgroundColor="{StaticResource OnboardingBlue}" />
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
