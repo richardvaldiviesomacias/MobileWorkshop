@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MobileWorkshop.Views.BudgetItemView">
+    <ContentView.Content>
+       <StackLayout
+           Margin="0,0,0,1"
+           Padding="16, 8, 16, 8"
+           BackgroundColor="White"
+           Orientation="Horizontal"
+           VerticalOptions="Start"
+           >
+           <Entry 
+               BackgroundColor="Transparent"
+               FontSize="18"
+               HorizontalOptions="Center"
+               VerticalOptions="Center"
+               VerticalTextAlignment="Center"
+               TextColor="{StaticResource OnboardingBatmansVeryDarkGray}"
+               Text="{Binding Name}"
+               />
+           <Entry 
+               HorizontalOptions="EndAndExpand"
+               VerticalOptions="Center"
+               VerticalTextAlignment="Center"
+               HorizontalTextAlignment="End"
+               Keyboard="Numeric"
+               Placeholder="0.00"
+               FontSize="18"
+               WidthRequest="120"
+               Text="{Binding Amount}"
+               TextColor="{StaticResource OnboardingBlue}"
+               />
+       </StackLayout>
+    </ContentView.Content>
+</ContentView>

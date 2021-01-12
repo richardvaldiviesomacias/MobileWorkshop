@@ -2,14 +2,12 @@
 
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:views="clr-namespace:MobileWorkshop.Views;assembly=MobileWorkshop"
              x:Class="MobileWorkshop.Onboarding.GoalsPage"
              NavigationPage.HasNavigationBar="false">
     <ContentPage.Content>
-        <Grid RowDefinitions="1*, Auto">
-            <Frame HasShadow="False" BorderColor="Transparent" Margin="0">
-                <Label Text="X" FontSize="Large" />
-            </Frame>
-            <ScrollView Grid.Row="0">
+        <views:OneButtonContentView x:Name="contentView">
+            <views:OneButtonContentView.MainContent>
                 <StackLayout>
                     <Label
                         Padding="16,64,16,0"
@@ -29,49 +27,19 @@
                         ItemsSource="{Binding Goals}"
                         SelectionMode="Multiple"
                         VerticalOptions="Center"
-                        WidthRequest="300">
+                        WidthRequest="300"
+                        SelectionChanged="SelectionChanged">
                         <CollectionView.ItemsLayout>
                             <GridItemsLayout Orientation="Vertical" Span="2" />
                         </CollectionView.ItemsLayout>
                         <CollectionView.ItemTemplate>
                             <DataTemplate>
-                                <StackLayout
-                                   Padding="4" 
-                                   HorizontalOptions="Center"
-                                   Spacing="0">
-                                    <Frame 
-                                        Margin="0"
-                                        Padding="0"
-                                        BackgroundColor="White"
-                                        CornerRadius="8"
-                                        HasShadow="{Binding IsSelected}"
-                                        HeightRequest="145"
-                                        HorizontalOptions="Center"
-                                        VerticalOptions="Center"
-                                        WidthRequest="150">
-                                        <StackLayout>
-                                            <Image 
-                                                Margin="0, 16"
-                                                HeightRequest="50"
-                                                HorizontalOptions="Center"
-                                                IsVisible="{Binding IsNotSelected}" 
-                                                Source="{Binding ImageSource}" 
-                                                WidthRequest="50"/>
-                                        </StackLayout>
-                                    </Frame>
-                                </StackLayout>
+                                <views:TitledIconVIew />
                             </DataTemplate>
                         </CollectionView.ItemTemplate>
                     </CollectionView>
                 </StackLayout>
-            </ScrollView>
-            <StackLayout Grid.Row="1">
-                <Button
-                    Margin="20"
-                    Text="Continue"
-                    VerticalOptions="EndAndExpand"
-                    BackgroundColor="{StaticResource OnboardingBlue}" />
-            </StackLayout>
-        </Grid>
+            </views:OneButtonContentView.MainContent>
+        </views:OneButtonContentView>
     </ContentPage.Content>
 </ContentPage>

@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:converters="clr-namespace:MobileWorkshop.Converters;assembly=MobileWorkshop"
+             xmlns:views="clr-namespace:MobileWorkshop.Views;assembly=MobileWorkshop"
+             x:Class="MobileWorkshop.Views.BudgetGroupView">
+    <ContentView.Content>
+        <StackLayout
+            Padding="0"
+            Spacing="0"
+            VerticalOptions="Start"
+            >
+            <Label 
+                Margin="8, 96, 8, 0"
+                Padding="0"
+                FontSize="26"
+                HorizontalOptions="CenterAndExpand"
+                VerticalOptions="Start"
+                HorizontalTextAlignment="Center"
+                TextColor="Black"
+                IsVisible="{Binding IsCustomTitleVisible}"
+                Text="{Binding CustomTitle}"
+                />
+            <StackLayout
+                Margin="8, 120, 8, 0"
+                HorizontalOptions="CenterAndExpand"
+                Orientation="Horizontal"
+                Spacing="0"
+                IsVisible="{Binding IsTitleVisible}"
+                >
+                <Label
+                    Margin="0"
+                    Padding="0"
+                    FontSize="26"
+                    HorizontalOptions="Center"
+                    HorizontalTextAlignment="Center"
+                    TextColor="Black"
+                    >
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Enter your "/>
+                            <!-- ReSharper disable Xaml.InvalidType -->
+                            <Span
+                                FontAttributes="Bold"
+                                FontSize="26"
+                                TextColor="{Binding ColorKey, Converter={converters:ColorKeyConverter}}"
+                                />
+                            <!-- ReSharper restore Xaml.InvalidType -->
+                            <Span Text="Expenses"/>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+            </StackLayout>
+            <Label 
+                Padding="0, 16, 0, 24"
+                FontSize="18"
+                HorizontalOptions="CenterAndExpand"
+                HorizontalTextAlignment="Center"
+                Text="{Binding Subtitle}"
+                />
+            
+            <!--Header -->
+            <StackLayout
+                Padding="16, 12, 16, 12"
+                BackgroundColor="White"
+                Orientation="Horizontal"
+                VerticalOptions="Start"
+                >
+                <Image 
+                    Margin="0, 0, 8, 0"
+                    HeightRequest="50"
+                    WidthRequest="50"
+                    HorizontalOptions="Start"
+                    VerticalOptions="Center"
+                    Source="{Binding IconSource}"
+                    />
+                <Label 
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    VerticalTextAlignment="Center"
+                    FontAttributes="Bold"
+                    FontSize="18"
+                    Text="{Binding HeaderText}"
+                    />
+                <Label 
+                    HorizontalOptions="EndAndExpand"
+                    VerticalOptions="Center"
+                    VerticalTextAlignment="Center"
+                    FontAttributes="Bold"
+                    FontSize="16"
+                    Text="Planned"
+                />
+            </StackLayout>
+            <StackLayout
+                IsVisible="{Binding HasSecondaryHeader}"
+                Margin="0, 1"
+                Padding="24, 8, 16, 12"
+                Spacing="0"
+                BackgroundColor="White"
+                Orientation="Vertical"
+                VerticalOptions="Start"
+                >
+                <Label
+                    FontSize="18"
+                    Margin="0"
+                    HorizontalOptions="Start"
+                    Text="Car Payment"
+                    TextColor="{StaticResource OnboardingBatmansVeryDarkGray}"
+                    VerticalOptions="Center"
+                    VerticalTextAlignment="End" />
+                <Label
+                    Margin="0"
+                    FontSize="12"
+                    HorizontalOptions="Start"
+                    Text="We will ask you about your car payment later"
+                    TextColor="{StaticResource OnboardingBatmansVeryDarkGray}"
+                    VerticalOptions="Center"
+                    VerticalTextAlignment="Start" />
+            </StackLayout>
+            <!--  Income budget items  -->
+            <CollectionView
+                x:Name="collectionView"
+                Margin="0,1,0,0"
+                HorizontalOptions="Start"
+                VerticalOptions="Start"
+                ItemsSource="{Binding BudgetItems}"
+                SelectionMode="None"
+                >
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <views:BudgetItemView />
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+            <!--  Footer  -->
+            <StackLayout
+                Margin="0,1,0,0"
+                Padding="0"
+                Spacing="0"
+                VerticalOptions="Start"
+                HeightRequest="40"
+                >
+                <Button 
+                    Margin="8,0,0,64"
+                    Padding="0"
+                    BackgroundColor="Transparent"
+                    FontAttributes="Bold"
+                    HeightRequest="40"
+                    HorizontalOptions="StartAndExpand"
+                    Text="{Binding AddItemText}"
+                    TextColor="#00aff"
+                    />
+            </StackLayout>
+        </StackLayout>
+    </ContentView.Content>
+</ContentView>

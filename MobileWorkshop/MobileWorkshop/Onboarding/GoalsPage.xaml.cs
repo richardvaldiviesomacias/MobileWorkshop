@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using MobileWorkshop.Models;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -24,6 +25,15 @@ namespace MobileWorkshop.Onboarding
         {
             InitializeComponent();
             BindingContext = this;
+            contentView.ContinueButton.IsEnabled = false;
+            contentView.ContinueButtonAction = () => Navigation.PushAsync(new MenuPage());
+        }
+
+        private void SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var selectedGoals = e.CurrentSelection.Cast<TitledIcon>().ToList();
+            Goals.ToList().ForEach(goal => goal.IsSelected = selectedGoals.Contains(goal));
+            contentView.ContinueButton.IsEnabled = selectedGoals.Count >= 1;
         }
     }
 }

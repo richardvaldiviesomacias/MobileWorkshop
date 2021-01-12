@@ -7,17 +7,14 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace MobileWorkshop.Onboarding
+namespace MobileWorkshop.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class IntroPage : ContentPage
+    public partial class BudgetItemView : ContentView
     {
-        public IntroPage()
+        public BudgetItemView()
         {
             InitializeComponent();
-            contentView.ContinueButtonAction = () =>  Navigation.PushAsync(new GoalsPage());
         }
-
-    
     }
 }

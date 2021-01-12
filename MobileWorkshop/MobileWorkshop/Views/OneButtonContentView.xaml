@@ -5,17 +5,15 @@
              x:Class="MobileWorkshop.Views.OneButtonContentView">
     <ContentView.Content>
        <Grid RowDefinitions="1*, Auto">
-           <Frame>
-               
+           <Frame HasShadow="False" BorderColor="Transparent" Margin="0">
+               <Label Text="X" FontSize="Large" />
            </Frame>
            <ScrollView Grid.Row="0">
-               <StackLayout>
-                   <ContentView
+               <ContentView
                        x:Name="mainContent"
                        HorizontalOptions="FillAndExpand"
                        VerticalOptions="FillAndExpand"
                    />
-               </StackLayout>
            </ScrollView>
            <StackLayout Grid.Row="1">
                <Button
@@ -24,7 +22,14 @@
                    Text="Continue"
                    VerticalOptions="EndAndExpand"
                    BackgroundColor="{StaticResource OnboardingBlue}" 
-                   Clicked="ContinueButton_OnClicked"/>
+                   TextColor="White"
+                   Clicked="ContinueButton_OnClicked">
+                   <Button.Triggers>
+                       <Trigger TargetType="Button" Property="IsEnabled" Value="False">
+                           <Setter Property="BackgroundColor" Value="{StaticResource OnboardingLightGray}" />
+                       </Trigger>
+                   </Button.Triggers>
+               </Button>
            </StackLayout>
        </Grid>
     </ContentView.Content>
