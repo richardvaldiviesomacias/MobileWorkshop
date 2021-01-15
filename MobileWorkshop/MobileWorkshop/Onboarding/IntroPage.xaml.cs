@@ -15,7 +15,7 @@ namespace MobileWorkshop.Onboarding
         public IntroPage()
         {
             InitializeComponent();
-            contentView.ContinueButtonAction = () =>  Navigation.PushAsync(new GoalsPage());
+            contentView.ContinueButtonAction = () =>  Navigation.PushAsync(new GoalsPage(Dependencies.ProfileViewModel));
         }
 
     

@@ -25,6 +25,7 @@ namespace Onboarding.ViewModels
             profile.Goals.ToList().ForEach(goal => Goals.Add(new TitledIconViewModel(goal)));
             profile.Status.ToList().ForEach(status => Status.Add(new TitledIconViewModel(status)));
         }
-
+        public void LogSelectedStatus() => Console.WriteLine("We will log these later");
+        public void LogSelectedGoals() => Console.WriteLine("We will log these later");
     }
 }
