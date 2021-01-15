@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:views="clr-namespace:MobileWorkshop.Views;assembly=MobileWorkshop"
+             x:Class="MobileWorkshop.Onboarding.StatusPage">
+    <ContentPage.Content>
+        <views:OneButtonContentView x:Name="contentView">
+            <views:OneButtonContentView.MainContent>
+                <StackLayout>
+                    <!--  Page title  -->
+                    <Label
+                        Padding="16,64,16,0"
+                        FontAttributes="Bold"
+                        FontSize="22"
+                        HorizontalOptions="CenterAndExpand"
+                        HorizontalTextAlignment="Center"
+                        Text="What's most important to you right now?" />
+                    <Label
+                        Padding="0,0,0,24"
+                        FontSize="18"
+                        HorizontalOptions="CenterAndExpand"
+                        HorizontalTextAlignment="Center"
+                        Text="(Choose all that apply.)" />
+
+                    <!--  Goals 2 colum conatiner  -->
+                    <CollectionView
+                        HorizontalOptions="Center"
+                        ItemsSource="{Binding Status}"
+                        SelectionChanged="SelectionChanged"
+                        SelectionMode="Multiple"
+                        VerticalOptions="Center"
+                        WidthRequest="300">
+
+                        <CollectionView.ItemsLayout>
+                            <GridItemsLayout Orientation="Vertical" Span="2" />
+                        </CollectionView.ItemsLayout>
+
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <views:TitledIconVIew/>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </StackLayout>
+            </views:OneButtonContentView.MainContent>
+        </views:OneButtonContentView>
+    </ContentPage.Content>
+</ContentPage>

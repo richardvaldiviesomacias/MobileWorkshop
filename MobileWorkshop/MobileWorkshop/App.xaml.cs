@@ -12,7 +12,7 @@ namespace MobileWorkshop
         public App()
         {
             InitializeComponent();
-
+            Dependencies.Init();
             MainPage = new NavigationPage(new IntroPage());
         }
 
