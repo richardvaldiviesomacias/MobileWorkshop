@@ -22,7 +22,7 @@ namespace MobileWorkshop.Onboarding
 
             BindingContext = this;
             
-            contentView.ContinueButtonAction = () => Navigation.PushAsync(new IncomePage());
+            contentView.ContinueButtonAction = () => Navigation.PushAsync(new IncomePage(Dependencies.ProfileViewModel.Budget.IncomeGroup));
         }
 
         private void CreateOnboardingSteps()
