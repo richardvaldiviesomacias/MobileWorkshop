@@ -46,6 +46,7 @@
         <Reference Include="System.Xml" />
     </ItemGroup>
     <ItemGroup>
+        <PackageReference Include="Xamarin.Android.Support.Animated.Vector.Drawable" Version="28.0.0.3" />
         <PackageReference Include="Xamarin.AndroidX.MediaRouter" Version="1.2.0.1" />
         <PackageReference Include="Xamarin.AndroidX.Palette" Version="1.0.0.6" />
         <PackageReference Include="Xamarin.Essentials" Version="1.6.0" />
@@ -57,6 +58,7 @@
         <PackageReference Include="Xamarin.Android.Support.v7.MediaRouter" Version="28.0.0.3" />
     </ItemGroup>
     <ItemGroup>
+        <Compile Include="Controls\AndroidStatusBar.cs" />
         <Compile Include="MainActivity.cs" />
         <Compile Include="Resources\Resource.Designer.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
@@ -112,6 +114,9 @@
             <Project>{6dbe8a4f-ff1e-4c20-958e-0938758d9c3d}</Project>
             <Name>MobileWorkshop</Name>
         </ProjectReference>
+    </ItemGroup>
+    <ItemGroup>
+      <Folder Include="Effects" />
     </ItemGroup>
     <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

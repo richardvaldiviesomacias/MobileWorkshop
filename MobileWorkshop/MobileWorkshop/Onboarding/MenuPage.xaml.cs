@@ -1,9 +1,4 @@
-using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using MobileWorkshop.Converters;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -22,7 +17,7 @@ namespace MobileWorkshop.Onboarding
 
             BindingContext = this;
             
-            contentView.ContinueButtonAction = () => Navigation.PushAsync(new IncomePage(Dependencies.ProfileViewModel.Budget.IncomeGroup));
+            contentView.ContinueButtonAction = () => Navigation.PushAsync(new IncomeIntroPage(Dependencies.ProfileViewModel.Budget.IncomeGroup));
         }
 
         private void CreateOnboardingSteps()

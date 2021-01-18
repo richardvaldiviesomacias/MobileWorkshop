@@ -5,9 +5,7 @@
              x:Class="MobileWorkshop.Views.OneButtonContentView">
     <ContentView.Content>
        <Grid RowDefinitions="1*, Auto">
-           <Frame HasShadow="False" BorderColor="Transparent" Margin="0">
-               <Label Text="X" FontSize="Large" />
-           </Frame>
+   
            <ScrollView Grid.Row="0">
                <ContentView
                        x:Name="mainContent"
@@ -15,7 +13,44 @@
                        VerticalOptions="FillAndExpand"
                    />
            </ScrollView>
-           <StackLayout Grid.Row="1">
+           
+           <!--  budget summary view  -->
+           <StackLayout
+               x:Name="budgetSummary"
+               Margin="0"
+               BackgroundColor="White"
+               HorizontalOptions="FillAndExpand"
+               IsVisible="false"
+               Orientation="Horizontal"
+               Spacing="0"
+               VerticalOptions="Start">
+               <Frame
+                   Padding="0,24"
+                   HasShadow="True"
+                   HorizontalOptions="FillAndExpand"
+                   VerticalOptions="Center">
+                   <!--budget summary goes here -->
+                   <Label Text="Budget Summary Here"
+                          HorizontalOptions="CenterAndExpand"
+                          VerticalOptions="Center" />
+               </Frame>
+           </StackLayout>
+           
+           <!--  floating exit button  -->
+           <Button
+               Grid.Row="0"
+               Margin="24,24"
+               Padding="0"
+               BackgroundColor="Transparent"
+               Clicked="ExitClick"
+               FontSize="20"
+               HeightRequest="25"
+               HorizontalOptions="Start"
+               Text="X"
+               TextColor="{StaticResource OnboardingBlue}"
+               VerticalOptions="Start"
+               WidthRequest="25" />
+           <StackLayout Grid.Row="1"  x:Name="continueButtonSurroundLayout">
                <Button
                    x:Name="continueButton"
                    Margin="20"

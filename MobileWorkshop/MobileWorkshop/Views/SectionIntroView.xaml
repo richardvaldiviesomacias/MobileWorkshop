@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:converters="clr-namespace:MobileWorkshop.Converters;assembly=MobileWorkshop"
+             xmlns:effects="clr-namespace:MobileWorkshop.Effects;assembly=MobileWorkshop"
+             x:Class="MobileWorkshop.Views.SectionIntroView">
+    <ContentView.Content>
+        <StackLayout
+            Margin="0,80,0,0"
+            Padding="0"
+            HorizontalOptions="Center"
+            Spacing="0"
+            VerticalOptions="Center">
+
+            <Grid HeightRequest="130" VerticalOptions="Center">
+
+                <!--  horizontal background image (gray elements only)  -->
+                <Image
+                    HeightRequest="90"
+                    HorizontalOptions="FillAndExpand"
+                    Source="intro_gray_only.png"
+                    VerticalOptions="Start" />
+
+                <!--  horizontal background image (theme colors only)  -->
+                <!-- ReSharper disable once Xaml.InvalidType -->
+                <Image
+                    x:Name="backgroundImage"
+                    HeightRequest="90"
+                    HorizontalOptions="FillAndExpand"
+                    Source="intro_color_only.png"                    
+                    VerticalOptions="Start" 
+                    effects:TintImageEffect.TintColor="{Binding ColorKey, Converter={converters:ColorKeyConverter}}"/>
+
+                <!--  icon image  -->
+                <Image
+                    HeightRequest="90"
+                    HorizontalOptions="Center"
+                    Source="{Binding IconSource}"
+                    VerticalOptions="End"
+                    WidthRequest="90" />
+
+            </Grid>
+
+            <!--  Caption  -->
+            <Label
+                Margin="0,12,0,0"
+                Padding="24,0"
+                FontSize="28"
+                HorizontalOptions="CenterAndExpand"
+                Text="{Binding Name}"
+                TextColor="Black"
+                VerticalOptions="Center" />
+
+            <!--  Details  -->
+            <Label
+                Margin="0,12,0,0"
+                Padding="24,0"
+                FontSize="19"
+                HorizontalOptions="CenterAndExpand"
+                HorizontalTextAlignment="Center"
+                LineHeight="1.3"
+                Text="{Binding Description}" />
+
+        </StackLayout>
+    </ContentView.Content>
+</ContentView>

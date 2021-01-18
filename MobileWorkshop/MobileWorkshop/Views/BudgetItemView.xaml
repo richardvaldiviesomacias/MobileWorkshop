@@ -2,6 +2,7 @@
 
 <ContentView xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:MobileWorkshop.Controls;assembly=MobileWorkshop"
              x:Class="MobileWorkshop.Views.BudgetItemView">
     <ContentView.Content>
        <StackLayout
@@ -11,26 +12,27 @@
            Orientation="Horizontal"
            VerticalOptions="Start"
            >
-           <Entry 
+           <controls:NoUnderlineEntry 
                BackgroundColor="Transparent"
                FontSize="18"
                HorizontalOptions="Center"
-               VerticalOptions="Center"
-               VerticalTextAlignment="Center"
-               TextColor="{StaticResource OnboardingBatmansVeryDarkGray}"
                Text="{Binding Name}"
-               />
-           <Entry 
-               HorizontalOptions="EndAndExpand"
+               TextColor="{StaticResource OnboardingBatmansVeryDarkGray}"
                VerticalOptions="Center"
                VerticalTextAlignment="Center"
+               />
+           <controls:NoUnderlineCurrencyEntry 
+               BackgroundColor="{StaticResource OnboardingLightGray}"
+               FontSize="18"
+               HorizontalOptions="EndAndExpand"
                HorizontalTextAlignment="End"
                Keyboard="Numeric"
-               Placeholder="0.00"
-               FontSize="18"
-               WidthRequest="120"
-               Text="{Binding Amount}"
+               Placeholder="$0.00"
+               ProcessedText="{Binding Amount, Mode=TwoWay}"
                TextColor="{StaticResource OnboardingBlue}"
+               VerticalOptions="Center"
+               VerticalTextAlignment="Center"
+               WidthRequest="120"
                />
        </StackLayout>
     </ContentView.Content>

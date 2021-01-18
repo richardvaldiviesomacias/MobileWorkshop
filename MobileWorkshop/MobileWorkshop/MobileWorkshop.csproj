@@ -20,4 +20,11 @@
     <ItemGroup>
       <ProjectReference Include="..\..\Onboarding.ViewModels\Onboarding.ViewModels.csproj" />
     </ItemGroup>
+
+    <ItemGroup>
+      <Compile Update="Onboarding\IncomeIntroPage.xaml.cs">
+        <DependentUpon>IncomeIntroPage.xaml</DependentUpon>
+        <SubType>Code</SubType>
+      </Compile>
+    </ItemGroup>
 </Project>

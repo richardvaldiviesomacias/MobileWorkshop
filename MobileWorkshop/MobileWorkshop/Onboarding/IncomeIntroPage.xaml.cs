@@ -5,13 +5,13 @@ using Xamarin.Forms.Xaml;
 namespace MobileWorkshop.Onboarding
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class IncomePage : ContentPage
+    public partial class IncomeIntroPage : ContentPage
     {
-        public IncomePage(BudgetGroupViewModel budgetGroupViewModel)
+        public IncomeIntroPage(BudgetGroupViewModel budgetGroupViewModel)
         {
             InitializeComponent();
             BindingContext = budgetGroupViewModel;
-            contentView.ContinueButtonAction = () => Navigation.PushAsync(new BasicExpensesIntroPage(Dependencies.ProfileViewModel.Budget.BasicExpensesDisplayGroup));
+            contentView.ContinueButtonAction = () => Navigation.PushAsync(new IncomePage(budgetGroupViewModel));
         }
     }
     
