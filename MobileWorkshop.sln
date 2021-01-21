@@ -18,6 +18,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Onboarding.RemoteBudget", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Onboarding.RemoteBudget.Test", "Onboarding.RemoteBudget.Test\Onboarding.RemoteBudget.Test.csproj", "{48FE98CB-EF14-4E8E-8F5F-0B0CCAB8AB15}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Onboarding.Models.TestIntegration", "Onboarding.Models.TestIntegration\Onboarding.Models.TestIntegration.csproj", "{6A852902-9EF4-46C6-B17D-48FE484FC346}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Ad-Hoc|iPhone = Ad-Hoc|iPhone
@@ -190,5 +192,21 @@ Global
 		{48FE98CB-EF14-4E8E-8F5F-0B0CCAB8AB15}.Release|iPhone.Build.0 = Release|Any CPU
 		{48FE98CB-EF14-4E8E-8F5F-0B0CCAB8AB15}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
 		{48FE98CB-EF14-4E8E-8F5F-0B0CCAB8AB15}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{6A852902-9EF4-46C6-B17D-48FE484FC346}.Ad-Hoc|iPhone.ActiveCfg = Debug|Any CPU
+		{6A852902-9EF4-46C6-B17D-48FE484FC346}.Ad-Hoc|iPhone.Build.0 = Debug|Any CPU
+		{6A852902-9EF4-46C6-B17D-48FE484FC346}.AppStore|iPhone.ActiveCfg = Debug|Any CPU
+		{6A852902-9EF4-46C6-B17D-48FE484FC346}.AppStore|iPhone.Build.0 = Debug|Any CPU
+		{6A852902-9EF4-46C6-B17D-48FE484FC346}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A852902-9EF4-46C6-B17D-48FE484FC346}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A852902-9EF4-46C6-B17D-48FE484FC346}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{6A852902-9EF4-46C6-B17D-48FE484FC346}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{6A852902-9EF4-46C6-B17D-48FE484FC346}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{6A852902-9EF4-46C6-B17D-48FE484FC346}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{6A852902-9EF4-46C6-B17D-48FE484FC346}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A852902-9EF4-46C6-B17D-48FE484FC346}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A852902-9EF4-46C6-B17D-48FE484FC346}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{6A852902-9EF4-46C6-B17D-48FE484FC346}.Release|iPhone.Build.0 = Release|Any CPU
+		{6A852902-9EF4-46C6-B17D-48FE484FC346}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{6A852902-9EF4-46C6-B17D-48FE484FC346}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

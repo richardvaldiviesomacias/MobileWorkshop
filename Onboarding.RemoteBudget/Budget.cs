@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using Newtonsoft.Json;
-
+[assembly: InternalsVisibleTo("Onboarding.Models.Test")]
 [assembly: InternalsVisibleTo("Onboarding.RemoteBudget.Test")]
 namespace Onboarding.RemoteBudget
 {

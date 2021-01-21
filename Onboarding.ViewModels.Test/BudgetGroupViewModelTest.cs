@@ -2,8 +2,11 @@ using System.Collections.Generic;
 using System.Linq;
 using FluentAssertions;
 using Onboarding.Models;
+using Onboarding.RemoteBudget;
 using Xunit;
 using Xunit.Sdk;
+using BudgetGroup = Onboarding.Models.BudgetGroup;
+using BudgetItem = Onboarding.Models.BudgetItem;
 
 namespace Onboarding.ViewModels.Test
 {

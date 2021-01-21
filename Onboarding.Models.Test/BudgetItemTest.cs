@@ -1,4 +1,5 @@
 using FluentAssertions;
+using Onboarding.RemoteBudget;
 using Xunit;
 
 namespace Onboarding.Models.Test

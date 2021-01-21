@@ -4,12 +4,14 @@ using System.ComponentModel;
 using System.Linq;
 using System.Collections.Generic;
 using System.Collections.Specialized;
+using Onboarding.RemoteBudget;
 
 namespace Onboarding.Models
 {
     public class BudgetGroup: INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
+        internal string NewBudgetItemName => $"Item {BudgetItems.Count + 1}";
         
         public readonly string Id;
         public readonly string Name;
@@ -52,5 +54,10 @@ namespace Onboarding.Models
         
         private void NotifyTotalAmountChanged()
             => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(TotalAmount)));
+
+        public void AddNewBudgetItem()
+        {
+            var newItem = new BudgetItem("id", NewBudgetItemName, type:DefaultItemType);
+        }
     }
 }

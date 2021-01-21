@@ -1,4 +1,5 @@
 using System.ComponentModel;
+using Onboarding.RemoteBudget;
 
 namespace Onboarding.Models
 {
@@ -24,11 +25,5 @@ namespace Onboarding.Models
         }
 
     }
-
-    public enum BudgetItemType
-    {
-        Income,
-        Expense,
-        Debt
-    }
+    
 }

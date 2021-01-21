@@ -1,7 +1,9 @@
 using System;
 using FluentAssertions;
 using Onboarding.Models;
+using Onboarding.RemoteBudget;
 using Xunit;
+using BudgetItem = Onboarding.Models.BudgetItem;
 
 namespace Onboarding.ViewModels.Test
 {

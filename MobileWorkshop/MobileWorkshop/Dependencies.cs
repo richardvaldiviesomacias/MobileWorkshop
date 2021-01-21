@@ -1,7 +1,11 @@
+using AccessControl;
 using Microsoft.Extensions.DependencyInjection;
 using Onboarding.Models;
 using Onboarding.Models.Builders;
+using Onboarding.Models.Sync;
+using Onboarding.RemoteBudget;
 using Onboarding.ViewModels;
+using RestSharp;
 
 namespace MobileWorkshop
 {
@@ -22,12 +26,23 @@ namespace MobileWorkshop
             ServiceProvider = collection.BuildServiceProvider();
         }
 
-        static void RegisterServices(IServiceCollection collection)
+        static void RegisterServices(IServiceCollection collection, IAccessControlManager accessControlManager)
         {
+            
+            //Services
+            var restClient = new RestClient("https://api.everydollar.com");
+            
+            collection.AddSingleton(accessControlManager);
+            collection.AddSingleton<IRestClient>(restClient);
+            collection.AddSingleton<IRemoteBudgetCalls, RemoteBudgetCalls>();
+            
+            //Models
             var budget = BudgetBuilder.Build();
             var profile = OnboardingProfileBuilder.Build(budget);
 
-            // Models
+            collection.AddSingleton<BudgetGroupSync>();
+            collection.AddSingleton<BudgetSync>();
+            collection.AddSingleton<GoalsStatusSync>();
             collection.AddSingleton(budget);
             collection.AddSingleton(profile);
 
