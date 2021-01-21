@@ -1,5 +1,6 @@
 ﻿using System;
 using MobileWorkshop.Onboarding;
+using Onboarding.RemoteBudget;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -12,7 +13,7 @@ namespace MobileWorkshop
         public App()
         {
             InitializeComponent();
-            Dependencies.Init();
+            Dependencies.Init(RemoteTesting.SignInForTesting());
             MainPage = new NavigationPage(new IntroPage());
         }
 

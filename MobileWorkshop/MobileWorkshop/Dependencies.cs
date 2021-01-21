@@ -1,3 +1,4 @@
+using System;
 using AccessControl;
 using Microsoft.Extensions.DependencyInjection;
 using Onboarding.Models;
@@ -19,10 +20,15 @@ namespace MobileWorkshop
         public static OnboardingProfileViewModel ProfileViewModel => ServiceProvider.GetService<OnboardingProfileViewModel>();
 
 
-        public static void Init()
+        public static void Init(IAccessControlManager accessControlManager)
         {
+            if(accessControlManager == null)
+            {
+                throw new ArgumentNullException(nameof(accessControlManager));
+            }
+
             collection = new ServiceCollection();
-            RegisterServices(collection);
+            RegisterServices(collection, accessControlManager);
             ServiceProvider = collection.BuildServiceProvider();
         }
 
