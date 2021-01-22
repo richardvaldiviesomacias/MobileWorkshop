@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MobileWorkshop.Views.BudgetSummaryView">
+    <ContentView.Content>
+        <StackLayout>
+            <Frame
+                x:Name="frame"
+                Margin="0"
+                Padding="0"
+                BackgroundColor="#b9b9b9"
+                CornerRadius="20"
+                HasShadow="False"
+                HeightRequest="17"
+                HorizontalOptions="Center"
+                WidthRequest="230">
+                     <Grid
+                    Margin="0"
+                    Padding="0"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="FillAndExpand">
+                    <BoxView
+                        HeightRequest="17"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="Start" />
+                    <BoxView
+                        BackgroundColor="{StaticResource OnboardingBlue}"
+                        HeightRequest="17"
+                        HorizontalOptions="Start"
+                        VerticalOptions="Start"
+                        WidthRequest="{Binding HousingGroupWidth}" />
+
+                    <BoxView
+                        BackgroundColor="{StaticResource OnboardingOrange}"
+                        HeightRequest="17"
+                        HorizontalOptions="Start"
+                        TranslationX="{Binding TransportationGroupOffset}"
+                        VerticalOptions="Start"
+                        WidthRequest="{Binding TransportationGroupWidth}" />
+                    <BoxView
+                        BackgroundColor="White"
+                        HeightRequest="17"
+                        HorizontalOptions="Start"
+                        TranslationX="{Binding TransportationGroupOffset}"
+                        VerticalOptions="Start"
+                        WidthRequest="1" />
+
+                    <BoxView
+                        BackgroundColor="{StaticResource OnboardingDeepBlue}"
+                        HeightRequest="17"
+                        HorizontalOptions="Start"
+                        TranslationX="{Binding FoodGroupOffset}"
+                        VerticalOptions="Start"
+                        WidthRequest="{Binding FoodGroupWidth}" />
+                    <BoxView
+                        BackgroundColor="White"
+                        HeightRequest="17"
+                        HorizontalOptions="Start"
+                        TranslationX="{Binding FoodGroupOffset}"
+                        VerticalOptions="Start"
+                        WidthRequest="1" />
+
+                    <BoxView
+                        BackgroundColor="{StaticResource OnboardingPurple}"
+                        HeightRequest="17"
+                        HorizontalOptions="Start"
+                        TranslationX="{Binding PersonalGroupOffset}"
+                        VerticalOptions="Start"
+                        WidthRequest="{Binding PersonalGroupWidth}" />
+                    <BoxView
+                        BackgroundColor="White"
+                        HeightRequest="17"
+                        HorizontalOptions="Start"
+                        TranslationX="{Binding PersonalGroupOffset}"
+                        VerticalOptions="Start"
+                        WidthRequest="1" />
+
+                    <BoxView
+                        BackgroundColor="{StaticResource OnboardingLightPurple}"
+                        HeightRequest="17"
+                        HorizontalOptions="Start"
+                        TranslationX="{Binding GivingGroupOffset}"
+                        VerticalOptions="Start"
+                        WidthRequest="{Binding GivingGroupWidth}" />
+                    <BoxView
+                        BackgroundColor="White"
+                        HeightRequest="17"
+                        HorizontalOptions="Start"
+                        TranslationX="{Binding GivingGroupOffset}"
+                        VerticalOptions="Start"
+                        WidthRequest="1" />
+
+                    <BoxView
+                        BackgroundColor="{StaticResource OnboardingRed}"
+                        HeightRequest="17"
+                        HorizontalOptions="Start"
+                        TranslationX="{Binding DebtGroupOffset}"
+                        VerticalOptions="Start"
+                        WidthRequest="{Binding DebtGroupWidth}" />
+                    <BoxView
+                        BackgroundColor="White"
+                        HeightRequest="17"
+                        HorizontalOptions="Start"
+                        TranslationX="{Binding DebtGroupOffset}"
+                        VerticalOptions="Start"
+                        WidthRequest="1" />
+
+                </Grid>
+            </Frame>
+            <StackLayout
+                HorizontalOptions="Center"
+                IsVisible="{Binding IsOnBudget}"
+                Orientation="Horizontal"
+                Spacing="0"
+                VerticalOptions="End">
+                <Label
+                    FontSize="16"
+                    HorizontalOptions="Center"
+                    Text="It's an EveryDollar budget!"
+                    TextColor="{StaticResource OnboardingGreen}"
+                    VerticalOptions="Center" />
+            </StackLayout>
+            <StackLayout
+                HorizontalOptions="Center"
+                IsVisible="{Binding IsUnderBudget}"
+                Orientation="Horizontal"
+                Spacing="0"
+                VerticalOptions="End">
+                <Label
+                    FontAttributes="Bold"
+                    FontSize="16"
+                    HorizontalOptions="Center"
+                    Text="{Binding BudgetDelta}"
+                    TextColor="Black"
+                    VerticalOptions="Center" />
+                <Label
+                    FontSize="16"
+                    HorizontalOptions="Center"
+                    Text=" left to budget"
+                    TextColor="#b9b9b9"
+                    VerticalOptions="Center" />
+            </StackLayout>
+            <StackLayout
+                HorizontalOptions="Center"
+                IsVisible="{Binding IsOverBudget}"
+                Orientation="Horizontal"
+                Spacing="0"
+                VerticalOptions="End">
+                <Label
+                    FontAttributes="Bold"
+                    FontSize="16"
+                    HorizontalOptions="Center"
+                    Text="{Binding BudgetDelta}"
+                    TextColor="Red"
+                    VerticalOptions="Center" />
+                <Label
+                    FontSize="16"
+                    HorizontalOptions="Center"
+                    Text=" over budget"
+                    TextColor="#b9b9b9"
+                    VerticalOptions="Center" />
+            </StackLayout>
+        </StackLayout>
+    </ContentView.Content>
+</ContentView>

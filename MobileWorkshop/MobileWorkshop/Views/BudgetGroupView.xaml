@@ -41,11 +41,13 @@
                         <FormattedString>
                             <Span Text="Enter your "/>
                             <!-- ReSharper disable Xaml.InvalidType -->
+                            <!-- ReSharper disable Xaml.InvalidType -->
                             <Span
                                 FontAttributes="Bold"
                                 FontSize="26"
                                 TextColor="{Binding ColorKey, Converter={converters:ColorKeyConverter}}"
                                 />
+                            <!-- ReSharper restore Xaml.InvalidType -->
                             <!-- ReSharper restore Xaml.InvalidType -->
                             <Span Text="Expenses"/>
                         </FormattedString>

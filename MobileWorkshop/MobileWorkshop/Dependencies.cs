@@ -18,6 +18,7 @@ namespace MobileWorkshop
         // Helpers for easy access
         public static OnboardingProfile Profile => ServiceProvider.GetService<OnboardingProfile>();
         public static OnboardingProfileViewModel ProfileViewModel => ServiceProvider.GetService<OnboardingProfileViewModel>();
+        public static BudgetSummaryViewModel BudgetSummaryViewModel => ServiceProvider.GetService<BudgetSummaryViewModel>();
 
 
         public static void Init(IAccessControlManager accessControlManager)
@@ -50,10 +51,13 @@ namespace MobileWorkshop
             collection.AddSingleton<BudgetSync>();
             collection.AddSingleton<GoalsStatusSync>();
             collection.AddSingleton(budget);
+            collection.AddSingleton<BudgetRatio>();
+            collection.AddSingleton<BudgetSummary>();
             collection.AddSingleton(profile);
 
             // View models
             collection.AddSingleton<BudgetViewModel>();
+            collection.AddSingleton<BudgetSummaryViewModel>();
             collection.AddSingleton<OnboardingProfileViewModel>();
         }
     }
