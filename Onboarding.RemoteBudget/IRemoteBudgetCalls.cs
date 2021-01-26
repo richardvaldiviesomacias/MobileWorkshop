@@ -6,9 +6,9 @@ namespace Onboarding.RemoteBudget
     public interface IRemoteBudgetCalls
     {
         Task<string> SignIn(string email, string password);
-        Task<Budget> CreateNewBudget();
-        Task<Budget> GetCurrentBudget();
-        Task<List<Budget>> GetAllBudgets();
+        Task<RemoteBudget> CreateNewBudget();
+        Task<RemoteBudget> GetCurrentBudget();
+        Task<List<RemoteBudget>> GetAllBudgets();
         Task UpdateBudgetItem(string budgetId, string itemId, decimal amount);
         Task DeleteBudget(string budgetId);
         Task DeleteBudgetItem(string budgetId, string itemId);

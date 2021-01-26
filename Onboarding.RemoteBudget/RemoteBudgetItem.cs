@@ -1,24 +1,24 @@
-using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using Newtonsoft.Json;
 [assembly: InternalsVisibleTo("Onboarding.Models.Test")]
 [assembly: InternalsVisibleTo("Onboarding.RemoteBudget.Test")]
 namespace Onboarding.RemoteBudget
 {
-    public class BudgetGroup
+    public class RemoteBudgetItem
     {
         public readonly string Id;
         public readonly string Label;
-        [JsonProperty("budget_items")]
-        public readonly List<BudgetItem> BudgetItems;
+        public readonly BudgetItemType Type;
+        [JsonProperty("amount_budgeted")]
+        public readonly int AmountBudgeted;
 
         [JsonConstructor]
-        public BudgetGroup(string id, string label, List<BudgetItem> budgetItems)
+        public RemoteBudgetItem(string id, BudgetItemType type, string label, int amountBudgeted)
         {
             Id = id;
+            Type = type;
             Label = label;
-            BudgetItems = budgetItems;
+            AmountBudgeted = amountBudgeted;
         }
-
     }
 }

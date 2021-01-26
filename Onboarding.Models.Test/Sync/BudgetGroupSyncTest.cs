@@ -84,31 +84,31 @@ namespace Onboarding.Models.Test.Sync
                 newItem.Amount); ;
         }
         
-        public static Onboarding.RemoteBudget.Budget CreateTestRemoteBudget()
+        public static Onboarding.RemoteBudget.RemoteBudget CreateTestRemoteBudget()
         {
-            return new RemoteBudget.Budget("test", new List<RemoteBudget.BudgetGroup>
+            return new RemoteBudget.RemoteBudget("test", new List<RemoteBudget.RemoteBudgetGroup>
             {
-                new RemoteBudget.BudgetGroup("Income", "Income", new List<RemoteBudget.BudgetItem>
+                new RemoteBudget.RemoteBudgetGroup("Income", "Income", new List<RemoteBudget.RemoteBudgetItem>
                 {
-                    new RemoteBudget.BudgetItem("test", RemoteBudget.BudgetItemType.Income, "Paycheck 1", 0),
-                    new RemoteBudget.BudgetItem("test", RemoteBudget.BudgetItemType.Income, "Paycheck 2", 0),
+                    new RemoteBudget.RemoteBudgetItem("test", RemoteBudget.BudgetItemType.Income, "Paycheck 1", 0),
+                    new RemoteBudget.RemoteBudgetItem("test", RemoteBudget.BudgetItemType.Income, "Paycheck 2", 0),
                 }),
                 
-                new RemoteBudget.BudgetGroup("Housing", "Housing", new List<RemoteBudget.BudgetItem>
+                new RemoteBudget.RemoteBudgetGroup("Housing", "Housing", new List<RemoteBudget.RemoteBudgetItem>
                 {
-                    new RemoteBudget.BudgetItem("test", RemoteBudget.BudgetItemType.Expense, "Mortgage/Rent", 0),
-                    new RemoteBudget.BudgetItem("test", RemoteBudget.BudgetItemType.Expense, "Water", 0),
-                    new RemoteBudget.BudgetItem("test", RemoteBudget.BudgetItemType.Expense, "Natural Gas", 0),
-                    new RemoteBudget.BudgetItem("test", RemoteBudget.BudgetItemType.Expense, "Electricity", 0),
-                    new RemoteBudget.BudgetItem("test", RemoteBudget.BudgetItemType.Expense, "Cable", 0),
-                    new RemoteBudget.BudgetItem("test", RemoteBudget.BudgetItemType.Expense, "Trash", 0),
+                    new RemoteBudget.RemoteBudgetItem("test", RemoteBudget.BudgetItemType.Expense, "Mortgage/Rent", 0),
+                    new RemoteBudget.RemoteBudgetItem("test", RemoteBudget.BudgetItemType.Expense, "Water", 0),
+                    new RemoteBudget.RemoteBudgetItem("test", RemoteBudget.BudgetItemType.Expense, "Natural Gas", 0),
+                    new RemoteBudget.RemoteBudgetItem("test", RemoteBudget.BudgetItemType.Expense, "Electricity", 0),
+                    new RemoteBudget.RemoteBudgetItem("test", RemoteBudget.BudgetItemType.Expense, "Cable", 0),
+                    new RemoteBudget.RemoteBudgetItem("test", RemoteBudget.BudgetItemType.Expense, "Trash", 0),
                 }),
                 
-                new RemoteBudget.BudgetGroup("Transportation", "Transportation", null),
-                new RemoteBudget.BudgetGroup("Food", "Food", null),
-                new RemoteBudget.BudgetGroup("Personal", "Personal", null),
-                new RemoteBudget.BudgetGroup("Giving", "Giving", null),
-                new RemoteBudget.BudgetGroup("Debt", "Debt", null),
+                new RemoteBudget.RemoteBudgetGroup("Transportation", "Transportation", null),
+                new RemoteBudget.RemoteBudgetGroup("Food", "Food", null),
+                new RemoteBudget.RemoteBudgetGroup("Personal", "Personal", null),
+                new RemoteBudget.RemoteBudgetGroup("Giving", "Giving", null),
+                new RemoteBudget.RemoteBudgetGroup("Debt", "Debt", null),
             });
         }
     }

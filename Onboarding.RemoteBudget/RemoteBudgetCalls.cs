@@ -24,7 +24,7 @@ namespace Onboarding.RemoteBudget
             throw new System.NotImplementedException();
         }
 
-        public async Task<Budget> CreateNewBudget()
+        public async Task<RemoteBudget> CreateNewBudget()
         {
             if (string.IsNullOrWhiteSpace(accessControlManager?.Jwt))
             {
@@ -49,7 +49,7 @@ namespace Onboarding.RemoteBudget
             {
                 var json = Cleaner.CleanJson(response.Content);
                 var jsonObject = JObject.Parse(json);
-                var budget = JsonConvert.DeserializeObject<Budget>(json);
+                var budget = JsonConvert.DeserializeObject<RemoteBudget>(json);
                 return budget;
             }
             catch (Exception e)
@@ -58,7 +58,7 @@ namespace Onboarding.RemoteBudget
             }
         }
 
-        public async Task<Budget> GetCurrentBudget()
+        public async Task<RemoteBudget> GetCurrentBudget()
         {
             var budgets = await GetAllBudgets();
 
@@ -81,7 +81,7 @@ namespace Onboarding.RemoteBudget
             try
             {
                 var json = Cleaner.CleanJson(response.Content);
-                var budget = JsonConvert.DeserializeObject<Budget>(json);
+                var budget = JsonConvert.DeserializeObject<RemoteBudget>(json);
                 return budget;
             }
             catch (Exception e)
@@ -90,7 +90,7 @@ namespace Onboarding.RemoteBudget
             }
         }
 
-        public async Task<List<Budget>> GetAllBudgets()
+        public async Task<List<RemoteBudget>> GetAllBudgets()
         {
             restClient.Timeout = -1;
             var request = new RestRequest("budget/budgets", Method.GET);
@@ -105,7 +105,7 @@ namespace Onboarding.RemoteBudget
             {
                 var json = Cleaner.CleanJson(response.Content);
                 var jsonObject = JObject.Parse(json);
-                var budgets = JsonConvert.DeserializeObject<List<Budget>>(jsonObject["budgets"].ToString());
+                var budgets = JsonConvert.DeserializeObject<List<RemoteBudget>>(jsonObject["budgets"].ToString());
                 return budgets;
             }
             catch (Exception e)
@@ -187,7 +187,7 @@ namespace Onboarding.RemoteBudget
             }
 
             // Delete all budgets
-            List<Budget> budgets = await GetAllBudgets();
+            List<RemoteBudget> budgets = await GetAllBudgets();
 
             foreach (var budget in budgets)
             {

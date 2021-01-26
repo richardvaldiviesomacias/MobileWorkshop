@@ -5,13 +5,13 @@ using Newtonsoft.Json;
 [assembly: InternalsVisibleTo("Onboarding.RemoteBudget.Test")]
 namespace Onboarding.RemoteBudget
 {
-    public class Budget
+    public class RemoteBudget
     {
         public readonly string Id;
-        [JsonProperty("budget_groups")] public readonly List<BudgetGroup> BudgetGroups;
+        [JsonProperty("budget_groups")] public readonly List<RemoteBudgetGroup> BudgetGroups;
 
         [JsonConstructor]
-        public Budget(string id, List<BudgetGroup> budgetGroups)
+        public RemoteBudget(string id, List<RemoteBudgetGroup> budgetGroups)
         {
             Id = id;
             BudgetGroups = budgetGroups;

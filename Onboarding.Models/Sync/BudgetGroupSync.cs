@@ -17,10 +17,10 @@ namespace Onboarding.Models.Sync
             this.remoteBudgetCalls = remoteBudgetCalls ?? throw new ArgumentNullException(nameof(remoteBudgetCalls));
         }
 
-        public virtual async Task SyncBudgetGroup(RemoteBudget.Budget remoteBudget, BudgetGroup budgetGroup)
+        public virtual async Task SyncBudgetGroup(RemoteBudget.RemoteBudget remoteBudget, BudgetGroup budgetGroup)
         {
             var budgetId = remoteBudget?.Id ?? throw new ArgumentNullException(nameof(remoteBudget));
-            RemoteBudget.BudgetGroup remoteGroup = remoteBudget?.BudgetGroups
+            RemoteBudget.RemoteBudgetGroup remoteGroup = remoteBudget?.BudgetGroups
                 ?.Where(g => g.Label.ToLower() == budgetGroup.Name.ToLower())
                 .FirstOrDefault() ?? throw new Exception($"Budget group not found: {budgetGroup.Name}");
 
@@ -32,7 +32,7 @@ namespace Onboarding.Models.Sync
             await Task.WhenAll(taskList);
         }
 
-        private async Task AddOrUpdateBudgetItem(string budgetId, BudgetItem item, RemoteBudget.BudgetGroup remoteGroup)
+        private async Task AddOrUpdateBudgetItem(string budgetId, BudgetItem item, RemoteBudget.RemoteBudgetGroup remoteGroup)
         {
             if (item.Amount == 0m)
             {
@@ -47,7 +47,7 @@ namespace Onboarding.Models.Sync
             }
             await remoteBudgetCalls.UpdateBudgetItem(budgetId, remoteItem.Id, item.Amount);
         }
-        public async Task RemoveUnusedBudgetItems(string budgetId, RemoteBudget.BudgetItem remoteItem, BudgetGroup profileGroup)
+        public async Task RemoveUnusedBudgetItems(string budgetId, RemoteBudget.RemoteBudgetItem remoteItem, BudgetGroup profileGroup)
         {
             var profileItem = profileGroup.BudgetItems.Where(i => i.Name == remoteItem.Label).FirstOrDefault();
 
@@ -58,7 +58,7 @@ namespace Onboarding.Models.Sync
             }
         }
         
-        internal bool IsRemoteBudgetItemUsedInProfile(BudgetGroup profileGroup, RemoteBudget.BudgetItem remoteItem)
+        internal bool IsRemoteBudgetItemUsedInProfile(BudgetGroup profileGroup, RemoteBudget.RemoteBudgetItem remoteItem)
         {
             // Search for matching items in the profile
             var profileItem = profileGroup.BudgetItems.Where(i => i.Name == remoteItem.Label).FirstOrDefault();
